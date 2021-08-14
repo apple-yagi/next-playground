@@ -4,7 +4,8 @@ import Head from "next/head";
 import NextNprogress from "nextjs-progressbar";
 import { ThemeProvider } from "@emotion/react";
 import { theme } from "@/styles/vars";
-import { global } from "@/styles/global";
+import { Header } from "@components/layout/Header";
+import "../styles/global.css";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -15,9 +16,8 @@ function MyApp({ Component, pageProps }) {
       <GlobalStyles />
       <NextNprogress />
       <ThemeProvider theme={theme}>
-        <div css={global}>
-          <Component {...pageProps} />
-        </div>
+        <Header />
+        <Component {...pageProps} />
       </ThemeProvider>
     </>
   );
